@@ -9,6 +9,8 @@
   "main": "app.js",
   "dependencies": {
     "connect": "^3.3.5",
+    "qs": "^6.4.0",
+    "qs-middleware": "^1.0.3",
     "swagger-connect": "^0.1.0"
   },
   "devDependencies": {
