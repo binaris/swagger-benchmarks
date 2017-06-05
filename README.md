@@ -6,13 +6,13 @@ To run the benchmarks you'll need:
 For example, to compare swagger-express to plain old express, run:
 
 ```
-docker-compose up swagger-express ab
+docker-compose up express-swagger ab
 ```
 
 And then compare its output to:
 
 ```
-docker-compose up swagger-vanilla ab
+docker-compose up express-vanilla ab
 ```
 
 Take a look at the `docker-compose.yml` file to see all the variants.
