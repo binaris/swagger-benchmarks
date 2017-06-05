@@ -1,23 +1,41 @@
 version: '2'
 services:
-    express-swagger:
-        build:
-            context: .
-            dockerfile: swagger.express.Dockerfile
-        network_mode: "host"
-        command: ["node", "express-swagger.js"]
     connect-swagger:
         build:
             context: .
             dockerfile: swagger.connect.Dockerfile
         network_mode: "host"
         command: ["node", "connect-swagger.js"]
+    connect-vanilla:
+        build:
+            context: .
+            dockerfile: swagger.connect.Dockerfile
+        network_mode: "host"
+        command: ["node", "connect-vanilla.js"]
+    express-swagger:
+        build:
+            context: .
+            dockerfile: swagger.express.Dockerfile
+        network_mode: "host"
+        command: ["node", "express-swagger.js"]
     express-vanilla:
         build:
             context: .
             dockerfile: swagger.express.Dockerfile
         network_mode: "host"
         command: ["node", "express-vanilla.js"]
+    restify-swagger:
+        build:
+            context: .
+            dockerfile: swagger.restify.Dockerfile
+        network_mode: "host"
+        command: ["node", "restify-swagger.js"]
+    restify-vanilla:
+        build:
+            context: .
+            dockerfile: swagger.restify.Dockerfile
+        network_mode: "host"
+        command: ["node", "restify-vanilla.js"]
     ab:
         image: jordi/ab
         command: 'bash -c "sleep 3; ab -n 10000 -k -c 1 http://localhost:10010/hello"'

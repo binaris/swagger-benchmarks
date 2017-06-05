@@ -24,4 +24,6 @@ Running on ec2 m4.large instance.
 
 Using host networking to eliminate Docker network related noise.
 
+No concurrency in the tests. Single core, serialized requests.
 
+Using keepalive with apache-bench (`-k`), because TCP connection establishment is irrelevant to this benchmark.
