@@ -1,0 +1,18 @@
+version: '2'
+services:
+    express-swagger:
+        build:
+            context: .
+            dockerfile: swagger.express.Dockerfile
+        network_mode: "host"
+        command: ["node", "express-swagger.js"]
+    express-vanilla:
+        build:
+            context: .
+            dockerfile: swagger.express.Dockerfile
+        network_mode: "host"
+        command: ["node", "express-vanilla.js"]
+    ab:
+        image: jordi/ab
+        command: 'bash -c "sleep 3; ab -n 10000 -k -c 1 http://localhost:10010/hello"'
+        network_mode: "host"
