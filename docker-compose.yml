@@ -36,6 +36,18 @@ services:
             dockerfile: swagger.restify.Dockerfile
         network_mode: "host"
         command: ["node", "restify-vanilla.js"]
+    hapi-swagger:
+        build:
+            context: .
+            dockerfile: swagger.hapi.Dockerfile
+        network_mode: "host"
+        command: ["node", "hapi-swagger.js"]
+    hapi-vanilla:
+        build:
+            context: .
+            dockerfile: swagger.hapi.Dockerfile
+        network_mode: "host"
+        command: ["node", "hapi-vanilla.js"]
     ab:
         image: jordi/ab
         command: 'bash -c "sleep 3; ab -n 10000 -k -c 1 http://localhost:10010/hello"'
