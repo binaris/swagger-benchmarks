@@ -6,6 +6,12 @@ services:
             dockerfile: swagger.express.Dockerfile
         network_mode: "host"
         command: ["node", "express-swagger.js"]
+    connect-swagger:
+        build:
+            context: .
+            dockerfile: swagger.connect.Dockerfile
+        network_mode: "host"
+        command: ["node", "connect-swagger.js"]
     express-vanilla:
         build:
             context: .
