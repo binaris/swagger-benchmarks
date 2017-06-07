@@ -48,7 +48,21 @@ services:
             dockerfile: swagger.hapi.Dockerfile
         network_mode: "host"
         command: ["node", "hapi-vanilla.js"]
+    sails-swagger:
+        build:
+            context: .
+            dockerfile: swagger.sails.Dockerfile
+        network_mode: "host"
+        command: ["node", "sails-swagger.js", "--port", "10010", "--prod"]
+        environment:
+            NODE_ENV: production
+    sails-vanilla:
+        build:
+            context: .
+            dockerfile: swagger.sails.Dockerfile
+        network_mode: "host"
+        command: ["node", "sails-vanilla.js"]
     ab:
         image: jordi/ab
-        command: 'bash -c "sleep 3; ab -n 10000 -k -c 1 http://localhost:10010/hello"'
+        command: 'bash -c "sleep 7; ab -n 100 -v 1 -k -c 1 http://localhost:10010/hello"'
         network_mode: "host"
