@@ -1,3 +1,5 @@
+This repo holds the benchmarking code that was used to measure the runtime overhead of using Swagger with Node.js. Read about it in [our blog post](http://blog.binaris.com/swagger/).
+
 To run the benchmarks you'll need:
 
 1. Docker-Compsoe
