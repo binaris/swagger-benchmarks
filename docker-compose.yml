@@ -38,5 +38,5 @@ services:
         command: ["node", "restify-vanilla.js"]
     ab:
         image: jordi/ab
-        command: 'bash -c "sleep 7; ab -n 100 -v 1 -k -c 1 http://localhost:10010/hello"'
+        entrypoint: ["sh", "-c", "sleep 7; ab -n 100 -v 1 -k -c 1 http://localhost:10010/hello"]
         network_mode: "host"
